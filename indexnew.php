@@ -40,23 +40,26 @@ if((!empty($_GET['action'])) && (!empty($_GET['id'])) {
             //echo "<tr>";
             //echo "<td>EDIT ROW</td>";
             //echo "<tr>";
-    ?>        
+    ?>
+    </table>
         <form name="form1" method="post" action="update.php">
-		<table border="0">
-			<tr> 
-				<td><input type="text" name="Forename" value="<?php echo $res['Forename']?>"></td>
-				<td><input type="text" name="Surname" value="<?php echo $res['Surname']?>"></td>
-				<td><input type="text" name="Department" value="<?php echo $res['Department'];?>"></td>
-				<td><input type="text" name="Catalouging" value="<?php echo $res['Catalouging'];?>"></td>
-				<td><input type="text" name="Assessments" value="<?php echo $res['Assessments'];?>"></td>
-				<td><input type="text" name="Loans" value="<?php echo $res['Loans'];?>"></td>
-				<td><input type="text" name="Admins" value="<?php echo $res['Admins'];?>"></td>
-				<td><input type="text" name="UserPassword" value="<?php echo $res['Password'];?>"></td>
-				<td><input type="hidden" name="idUser" value="<?php echo $idUser;?>"></td>
-				<td><input type="submit" value="Update"></td>
-			</tr>
-		</table>
-    </form>
+            <table table width='80%' border=0>
+                <tr> 
+                    <td><input type="text" name="Forename" value="<?php echo $res['ForeName']?>"></td>
+                    <td><input type="text" name="Surname" value="<?php echo $res['SurName']?>"></td>
+                    <td><input type="text" name="Department" value="<?php echo $res['Department'];?>"></td>
+                    <td><input type="text" name="Catalouging" value="<?php echo $res['Catalouging'];?>"></td>
+                    <td><input type="text" name="Assessments" value="<?php echo $res['Assessments'];?>"></td>
+                    <td><input type="text" name="Loans" value="<?php echo $res['Loans'];?>"></td>
+                    <td><input type="text" name="Admins" value="<?php echo $res['Admins'];?>"></td>
+                    <td><input type="text" name="UserPassword" value="<?php echo $res['UserPassword'];?>"></td>
+                    <td><input type="hidden" name="idUser" value="<?php echo $idUser;?>"></td>
+                    <td><input type="submit" value="Update"></td>
+                </tr>
+            </table>
+        </form>
+    <table width='80%' border=0>
+    <?php $action = 0; ?>
     <?php
         } else{
             echo "<tr>";
@@ -69,6 +72,7 @@ if((!empty($_GET['action'])) && (!empty($_GET['id'])) {
             echo "<td>".$res['Admins']."</td>";	
             echo "<td>".$res['UserPassword']."</td>";	
             echo "<td><a href=\"indexnew.php?id=$res[idUser]&action=1\">Edit</a> | <a href=\"delete.php?id=$res[idUser]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+            echo "</tr>";            
         }		
 	}
 	?>
